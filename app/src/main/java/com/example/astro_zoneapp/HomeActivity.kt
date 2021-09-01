@@ -43,13 +43,13 @@ class HomeActivity : AppCompatActivity() , DatePickerDialog.OnDateSetListener{
 
         //return the selected date
 
-        result.setText("Hi "+ name.text.toString() + "Your Zodiac sign is :" + ZodiacSign(day,month))
+        result.setText("Hi "+ name.text.toString() + " Your Zodiac sign is : " + ZodiacSign(day,month))
 
 
     }
 
     private fun ZodiacSign(day:Int,month:Int):String
-    {
+     {
         var zodiacSign="";
 
         if(month==0)
