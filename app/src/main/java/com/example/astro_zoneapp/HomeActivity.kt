@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.DatePicker
 import android.widget.EditText
+import android.widget.ImageView
 import java.util.*
 
 class HomeActivity : AppCompatActivity() , DatePickerDialog.OnDateSetListener{
@@ -16,6 +17,7 @@ class HomeActivity : AppCompatActivity() , DatePickerDialog.OnDateSetListener{
     var day: Int = 0;
     var month:Int=0;
     var year:Int=0;
+    lateinit var zodiacSign_Image:ImageView;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +26,7 @@ class HomeActivity : AppCompatActivity() , DatePickerDialog.OnDateSetListener{
         name=findViewById<EditText>(R.id.name);
         dob_button=findViewById<Button>(R.id.dob_button);
         result=findViewById<EditText>(R.id.result);
+        zodiacSign_Image=findViewById(R.id.zodiacSign_Image);
 
         dob_button.setOnClickListener{
 
@@ -43,110 +46,134 @@ class HomeActivity : AppCompatActivity() , DatePickerDialog.OnDateSetListener{
 
         //return the selected date
 
-        result.setText("Hi "+ name.text.toString() + "Your Zodiac sign is :" + ZodiacSign(day,month))
+        result.setText("Hi "+ name.text.toString() + " Your Zodiac sign is : " + ZodiacSign(day,month))
 
 
     }
 
     private fun ZodiacSign(day:Int,month:Int):String
-    {
+     {
         var zodiacSign="";
 
         if(month==0)
         {
             if(day<20)
-            { zodiacSign="Capricon"; }
+            { zodiacSign="Capricon";
+                zodiacSign_Image.setImageResource(R.drawable.capricorn) ;}
             else
-            { zodiacSign="Aquarius"; }
+            { zodiacSign="Aquarius";
+                zodiacSign_Image.setImageResource(R.drawable.aquarius) ;}
         }
 
 
         if(month==1)
         {
             if(day<19)
-            { zodiacSign="Aquarius"; }
+            { zodiacSign="Aquarius";
+                zodiacSign_Image.setImageResource(R.drawable.aquarius) ;}
             else
-            { zodiacSign="Pisces"; }
+            { zodiacSign="Pisces";
+                zodiacSign_Image.setImageResource(R.drawable.pisces) ;}
         }
 
         if(month===2)
         {
             if(day<21)
-            { zodiacSign="Pisces"; }
+            { zodiacSign="Pisces";
+                zodiacSign_Image.setImageResource(R.drawable.pisces) ;}
             else
-            { zodiacSign="Aries"; }
+            { zodiacSign="Aries";
+                zodiacSign_Image.setImageResource(R.drawable.aries) ;}
         }
 
         if(month==3)
         {
             if(day<20)
-            { zodiacSign="Aries"; }
+            { zodiacSign="Aries";
+              zodiacSign_Image.setImageResource(R.drawable.aries) ; }
             else
-            { zodiacSign="Taurus"; }
+            { zodiacSign="Taurus";
+                zodiacSign_Image.setImageResource(R.drawable.taurus) ;}
         }
 
         if(month==4)
         {
             if(day<21)
-            { zodiacSign="Taurus"; }
+            { zodiacSign="Taurus";
+                zodiacSign_Image.setImageResource(R.drawable.taurus) ;}
             else
-            { zodiacSign="Gemini"; }
+            { zodiacSign="Gemini";
+                zodiacSign_Image.setImageResource(R.drawable.gemini) ;}
         }
 
         if(month==5)
         {
             if(day<22)
-            { zodiacSign="Gemini"; }
+            { zodiacSign="Gemini";
+                zodiacSign_Image.setImageResource(R.drawable.gemini) ;}
             else
-            { zodiacSign="Cancer"; }
+            { zodiacSign="Cancer";
+                zodiacSign_Image.setImageResource(R.drawable.cancer) ;}
         }
 
         if(month==6)
         {
             if(day<23)
-            { zodiacSign="Cancer"; }
+            { zodiacSign="Cancer";
+                zodiacSign_Image.setImageResource(R.drawable.cancer) ;}
             else
-            { zodiacSign="Leo"; }
+            { zodiacSign="Leo";
+                zodiacSign_Image.setImageResource(R.drawable.leo) ;}
         }
 
         if(month==7)
         {
             if(day<23)
-            { zodiacSign="Leo"; }
+            { zodiacSign="Leo";
+                zodiacSign_Image.setImageResource(R.drawable.leo) ;}
             else
-            { zodiacSign="Virgo"; }
+            { zodiacSign="Virgo";
+                zodiacSign_Image.setImageResource(R.drawable.virgo) ;}
         }
 
         if(month==8)
         {
             if(day<23)
-            { zodiacSign="Virgo"; }
+            { zodiacSign="Virgo";
+                zodiacSign_Image.setImageResource(R.drawable.virgo) ;}
             else
-            { zodiacSign="Libra"; }
+            { zodiacSign="Libra";
+                zodiacSign_Image.setImageResource(R.drawable.libra) ;}
         }
 
         if(month==9)
         {
             if(day<24)
-            { zodiacSign="Libra"; }
+            { zodiacSign="Libra";
+                zodiacSign_Image.setImageResource(R.drawable.libra) ;}
             else
-            { zodiacSign="Scorpius"; }
+            { zodiacSign="Scorpius";
+                zodiacSign_Image.setImageResource(R.drawable.scorpio) ;}
         }
 
         if(month==10)
         {
             if(day<22)
-            { zodiacSign="Scorpius"; }
+            { zodiacSign="Scorpius";
+                zodiacSign_Image.setImageResource(R.drawable.scorpio) ;}
             else
-            { zodiacSign="Sagittarius"; }
+            { zodiacSign="Sagittarius";
+                zodiacSign_Image.setImageResource(R.drawable.sagittarius) ;}
         }
 
         if(month==11)
         {
             if(day<22)
-            { zodiacSign="Sagittarius"; }
+            { zodiacSign="Sagittarius";
+                zodiacSign_Image.setImageResource(R.drawable.sagittarius) ;}
             else
-            { zodiacSign="Capricornus"; }
+            { zodiacSign="Capricornus";
+                zodiacSign_Image.setImageResource(R.drawable.capricorn) ;}
         }
         return zodiacSign;
     }
